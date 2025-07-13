@@ -3,31 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brandon M. White | Author</title>
+  <title>Brandon M. White | Storycraft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="worlds.html">Worlds</a></li>
-      <li><a href="links.html">Links</a></li>
-    </ul>
-  </nav>
-  <header>
-    <h1>Brandon M. White</h1>
-    <p>Built on story. Bound by wonder — one word at a time.</p>
-  </header>
-  <main>
-    <section>
-      <h2>Welcome</h2>
-      <p>Author of <em>The Ones Who Ascend</em> and <em>Tick Not, Talk Not</em>. Explore the worlds of fantasy and noir, stitched together with wonder, grit, and truth.</p>
-      <p><a href="https://brandonwhite.substack.com">Subscribe on Substack</a> for monthly stories, lore, and podcast readings.</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; Brandon M. White. All rights reserved.</p>
-  </footer>
+  <div id="audio-toggle" onclick="toggleAudio()">🔈</div>
+  <div class="hero">
+    <h1 class="animated-title">Brandon M. White</h1>
+    <p class="subtitle">Built on story. Bound by wonder — one word at a time.</p>
+    <div class="cta-buttons">
+      <a class="btn" href="universes.html">Enter the Universes</a>
+      <a class="btn secondary" href="https://brandonwhite.substack.com" target="_blank">Subscribe</a>
+    </div>
+  </div>
+  <audio id="ambience" loop autoplay>
+    <source src="audio/index-ambience.mp3" type="audio/mp3">
+  </audio>
+  <script src="script.js"></script>
 </body>
 </html>
