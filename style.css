@@ -1,0 +1,124 @@
+:root {
+  --bg-start: #fdfaf6;
+  --bg-end: #eae4fb;
+  --text-color: #111;
+  --accent-color: #7e5bef;
+  --font-fantasy: 'Playfair Display', serif;
+  --font-noir: 'Crimson Pro', serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-fantasy);
+  color: var(--text-color);
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  transition: background 1s ease, color 1s ease, font-family 1s ease;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  z-index: 100;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  transition: color 0.5s;
+}
+nav a:hover {
+  color: var(--accent-color);
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+section .content {
+  max-width: 600px;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #5a3fbf;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  margin: 0.5rem 0;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: rgba(0,0,0,0.1);
+}
+
+body.theme-transition {
+  --bg-start: #dcd2e8;
+  --bg-end: #c6b2a5;
+  --text-color: #3a2e2e;
+  --accent-color: #9b5fc0;
+}
+
+body.theme-noir {
+  --bg-start: #2b2b2b;
+  --bg-end: #1f1f1f;
+  --text-color: #f0eada;
+  --accent-color: #a58f71;
+  font-family: var(--font-noir);
+}
+
+body.theme-noir nav {
+  background: rgba(0,0,0,0.7);
+}
+
+body.theme-noir a,
+body.theme-noir nav a {
+  color: var(--text-color);
+}
+body.theme-noir a:hover {
+  color: var(--accent-color);
+}
