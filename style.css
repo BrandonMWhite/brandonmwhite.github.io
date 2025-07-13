@@ -1,124 +1,126 @@
 :root {
-  --bg-start: #fdfaf6;
-  --bg-end: #eae4fb;
-  --text-color: #111;
-  --accent-color: #7e5bef;
-  --font-fantasy: 'Playfair Display', serif;
-  --font-noir: 'Crimson Pro', serif;
+  --color-fantasy-bg: radial-gradient(circle at top left, #fdfaf6, #eae4fb);
+  --color-noir-bg: linear-gradient(to bottom, #1f1f1f, #0e0e0e);
+  --color-accent-fantasy: #a98ff2;
+  --color-accent-noir: #c19c72;
+  --font-header: 'Playfair Display', serif;
+  --font-body: 'Crimson Pro', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-fantasy);
-  color: var(--text-color);
-  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
-  transition: background 1s ease, color 1s ease, font-family 1s ease;
+  font-family: var(--font-body);
+  background: var(--color-fantasy-bg);
+  color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 nav {
   position: fixed;
-  width: 100%;
   top: 0;
-  background: rgba(255,255,255,0.8);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
   backdrop-filter: blur(10px);
-  padding: 1rem;
-  z-index: 100;
 }
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+
 nav a {
-  text-decoration: none;
-  color: var(--text-color);
+  margin: 0 2rem;
+  font-family: var(--font-header);
   font-weight: bold;
-  transition: color 0.5s;
-}
-nav a:hover {
-  color: var(--accent-color);
-}
-
-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-section .content {
-  max-width: 600px;
-}
-
-#hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-.tagline {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: var(--accent-color);
-  color: #fff;
+  font-size: 1.1rem;
+  color: #444;
   text-decoration: none;
-  font-size: 1rem;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-.btn:hover {
-  background: #5a3fbf;
+  transition: color 0.3s ease;
 }
 
-h2 {
-  font-size: 2.5rem;
+nav a:hover {
+  color: var(--color-accent-fantasy);
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #eae4fb 0%, #dcd1ff 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #2c2c2c;
+  padding: 2rem;
+  animation: fadeIn 2s ease;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-family: var(--font-header);
+  color: var(--color-accent-fantasy);
+  text-shadow: 2px 2px 10px rgba(169, 143, 242, 0.4);
   margin-bottom: 1rem;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.hero p {
+  font-size: 1.3rem;
+  max-width: 600px;
 }
-ul li {
-  margin: 0.5rem 0;
+
+.btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background: var(--color-accent-fantasy);
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+  background: #7e5bef;
+  transform: scale(1.05);
+}
+
+section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+#about, #worlds, #contact {
+  background: #faf7ff;
+}
+
+#about h2, #worlds h2, #contact h2 {
+  font-family: var(--font-header);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent-fantasy);
+}
+
+#about p, #worlds p, #contact p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 footer {
-  padding: 2rem;
+  background: var(--color-noir-bg);
+  color: #ccc;
   text-align: center;
-  background: rgba(0,0,0,0.1);
+  padding: 2rem;
+  font-size: 0.9rem;
 }
 
-body.theme-transition {
-  --bg-start: #dcd2e8;
-  --bg-end: #c6b2a5;
-  --text-color: #3a2e2e;
-  --accent-color: #9b5fc0;
-}
-
-body.theme-noir {
-  --bg-start: #2b2b2b;
-  --bg-end: #1f1f1f;
-  --text-color: #f0eada;
-  --accent-color: #a58f71;
-  font-family: var(--font-noir);
-}
-
-body.theme-noir nav {
-  background: rgba(0,0,0,0.7);
-}
-
-body.theme-noir a,
-body.theme-noir nav a {
-  color: var(--text-color);
-}
-body.theme-noir a:hover {
-  color: var(--accent-color);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
